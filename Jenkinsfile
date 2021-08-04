@@ -3,7 +3,6 @@ pipeline {
     environment {
         ECR_REGISTRY = "307795694096.dkr.ecr.us-east-1.amazonaws.com"
         APP_REPO_NAME= "jdevopser-repository/to-do-app"
-        PATH="/usr/local/bin/:${env.PATH}"
     }
     stages {
         stage("Run app on Docker"){
