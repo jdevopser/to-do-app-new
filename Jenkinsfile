@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build --force-rm -tag "$ECR_REGISTRY/$APP_REPO_NAME:latest" .'
+                sh 'docker build --force-rm "$ECR_REGISTRY/$APP_REPO_NAME:latest" .'
                 sh 'docker image ls'
             }
         }
