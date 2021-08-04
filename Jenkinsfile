@@ -2,7 +2,7 @@ pipeline {
     agent { label "master" }
     environment {
         ECR_REGISTRY = "307795694096.dkr.ecr.eu-west-1.amazonaws.com"
-        APP_REPO_NAME= "jdevopser-repo/to-do-app"
+        APP_REPO_NAME= "jdevopser-repository/to-do-app"
     }
     stages {
         stage("Run app on Docker"){
