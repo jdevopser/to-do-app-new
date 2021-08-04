@@ -2,7 +2,7 @@ pipeline {
     agent { label "master" }
     environment {
         ECR_REGISTRY = "307795694096.dkr.ecr.eu-west-1.amazonaws.com"
-        APP_REPO_NAME= "jdevopser-repository/to-do-app/"
+        APP_REPO_NAME= "jdevopser-repository/to-do-app"
     }
     stages {
         stage("Run app on Docker"){
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build --force-rm -t "$ECR_REGISTRY/$APP_REPO_NAME:latest" .'
+                sh 'docker build --force-rm -tag "$ECR_REGISTRY/$APP_REPO_NAME:latest" .'
                 sh 'docker image ls'
             }
         }
